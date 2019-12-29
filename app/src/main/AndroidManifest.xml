@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MaterialAppTheme">
-        <activity android:name=".splash">
+        <activity android:name=".splash"
+            android:theme="@style/Material_NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
