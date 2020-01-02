@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NWCafeteria</string>
+    <string name="zomato_key">315e240a55a1cd34575813ba640eb900</string>
 </resources>
