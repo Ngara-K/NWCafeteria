@@ -1,12 +1,12 @@
 package io.github.nwcafeteria;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.widget.Toast;
+import androidx.fragment.app.FragmentManager;
 
 import io.github.nwcafeteria.ui.categories_fragment;
 import io.github.nwcafeteria.ui.cities_fragment;
@@ -21,6 +21,12 @@ public class main extends AppCompatActivity {
     //smoothBar
     private SmoothBottomBar smoothBottomBar;
 
+    //initializing fragments
+    final Fragment citiesFm = new cities_fragment();
+    final Fragment categoriesFm = new categories_fragment();
+    final FragmentManager fragmentManager = getSupportFragmentManager();
+    Fragment activeFm = citiesFm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,28 +34,29 @@ public class main extends AppCompatActivity {
 
         //setting up toolbar
         toolbar = getSupportActionBar();
-        toolbar.setTitle("Cities");
+
+        //initializing views
+        smoothBottomBar = findViewById(R.id.c_bottomBar);
 
         //load first fragment
-        loadFragment(new cities_fragment());
-
-        smoothBottomBar = findViewById(R.id.c_bottomBar);
+        fragmentManager.beginTransaction().add(R.id.c_frame, categoriesFm, "2").hide(categoriesFm).commit();
+        fragmentManager.beginTransaction().add(R.id.c_frame, citiesFm, "1").commit();
+        toolbar.setTitle("Cafeteria | Cities");
 
         //smoothBar callbacks
         smoothBottomBar.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
-            public void onItemSelect(int i) {
-                Fragment fragment;
+            public void onItemSelect(int position) {
 
-                if (i==0) {
-                    toolbar.setTitle("Cities");
-                    fragment = new cities_fragment();
-                    loadFragment (fragment);
+                if (position==0 || activeFm == categoriesFm) {
+                    toolbar.setTitle("Cafeteria | Cities");
+                    fragmentManager.beginTransaction().hide(activeFm).show(citiesFm).commit();
+                    activeFm = citiesFm;
                 }
-                else  if (i==1) {
-                    toolbar.setTitle("Categories");
-                    fragment = new categories_fragment();
-                    loadFragment (fragment);
+                else  if (position==1 || activeFm == citiesFm) {
+                    toolbar.setTitle("Cafeteria | Categories");
+                    fragmentManager.beginTransaction().hide(activeFm).show(categoriesFm).commit();
+                    activeFm = categoriesFm;
                 }
                 else {
                     Toast.makeText(main.this, "No Action", Toast.LENGTH_SHORT).show();
@@ -60,16 +67,8 @@ public class main extends AppCompatActivity {
         smoothBottomBar.setOnItemReselectedListener(new OnItemReselectedListener() {
             @Override
             public void onItemReselect(int i) {
-                Toast.makeText(main.this, "Reselected position : " + i, Toast.LENGTH_SHORT).show();
+                //Reselected_No_Action
             }
         });
-    }
-
-    private void loadFragment(Fragment fragment) {
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.c_frame, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 }
