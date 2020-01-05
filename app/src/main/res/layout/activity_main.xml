@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".main">
 
-    <ImageView
-        android:layout_width="158dp"
-        android:layout_height="215dp"
-        android:layout_marginTop="140dp"
-        android:src="@drawable/ic_city"
+    <FrameLayout
+        android:id="@+id/c_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/c_bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +23,7 @@
         app:iconTintActive="@color/white"
         app:activeItem="0"
         app:iconSize="25dp"
-        app:backgroundColor="@color/colorPrimaryDark"
+        app:backgroundColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
