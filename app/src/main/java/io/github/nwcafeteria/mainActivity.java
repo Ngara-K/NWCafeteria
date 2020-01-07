@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import io.github.nwcafeteria.ui.categories_fragment;
-import io.github.nwcafeteria.ui.cities_fragment;
+import io.github.nwcafeteria.ui.categoriesFragment;
+import io.github.nwcafeteria.ui.citiesFragment;
 import me.ibrahimsn.lib.OnItemReselectedListener;
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
-public class main extends AppCompatActivity {
+public class mainActivity extends AppCompatActivity {
 
     //configuring actionbar
     private ActionBar toolbar;
@@ -22,8 +22,8 @@ public class main extends AppCompatActivity {
     private SmoothBottomBar smoothBottomBar;
 
     //initializing fragments
-    final Fragment citiesFm = new cities_fragment();
-    final Fragment categoriesFm = new categories_fragment();
+    final Fragment citiesFm = new citiesFragment();
+    final Fragment categoriesFm = new categoriesFragment();
     final FragmentManager fragmentManager = getSupportFragmentManager();
     Fragment activeFm = citiesFm;
 
@@ -59,7 +59,7 @@ public class main extends AppCompatActivity {
                     activeFm = categoriesFm;
                 }
                 else {
-                    Toast.makeText(main.this, "No Action", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mainActivity.this, "No Action", Toast.LENGTH_SHORT).show();
                 }
             }
         });

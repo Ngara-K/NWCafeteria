@@ -13,11 +13,11 @@
         tools:ignore="GoogleAppIndexingWarning"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".main"
+            android:name=".mainActivity"
             android:label="Cafeteria"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".splash"
+            android:name=".splashActivity"
             android:theme="@style/Material_NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
