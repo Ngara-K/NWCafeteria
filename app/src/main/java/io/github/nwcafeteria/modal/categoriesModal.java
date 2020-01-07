@@ -3,7 +3,7 @@ package io.github.nwcafeteria.modal;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class categories_modal {
+public abstract class categoriesModal {
 
     @Expose
     @SerializedName("category_name")
@@ -12,7 +12,7 @@ public abstract class categories_modal {
     @SerializedName("category_id")
     private String category_id;
 
-    public categories_modal(String category_name, String category_id) {
+    public categoriesModal(String category_name, String category_id) {
         this.category_name = category_name;
         this.category_id = category_id;
     }

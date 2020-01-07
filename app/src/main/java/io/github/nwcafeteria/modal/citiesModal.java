@@ -3,7 +3,7 @@ package io.github.nwcafeteria.modal;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class cities_modal {
+public abstract class citiesModal {
 
     @Expose
     @SerializedName("state_code")
@@ -30,7 +30,7 @@ public abstract class cities_modal {
     @SerializedName("id")
     private String id;
 
-    public cities_modal(String state_code, String state_name, String state_id, String is_state, String country_name, String country_id, String name, String id) {
+    public citiesModal(String state_code, String state_name, String state_id, String is_state, String country_name, String country_id, String name, String id) {
         this.state_code = state_code;
         this.state_name = state_name;
         this.state_id = state_id;

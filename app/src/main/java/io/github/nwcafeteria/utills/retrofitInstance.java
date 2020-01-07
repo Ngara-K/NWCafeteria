@@ -3,7 +3,7 @@ package io.github.nwcafeteria.utills;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitInstance {
+public class retrofitInstance {
 
     //defining and declaring base url
     private static Retrofit retrofit;
