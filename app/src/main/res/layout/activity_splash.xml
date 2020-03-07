@@ -8,29 +8,21 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="195dp"
-        android:layout_height="189dp"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21"
-        app:srcCompat="@drawable/app_logo" />
+        app:srcCompat="@drawable/ic_app_logo" />
 
-    <ImageView
-        android:id="@+id/food_pic"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="206dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="w,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/food_" />
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="#恩加拉 K"
+        android:textStyle="bold"
+        android:textColor="@color/sea_green"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
