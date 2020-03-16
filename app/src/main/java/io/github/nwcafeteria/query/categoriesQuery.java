@@ -7,5 +7,5 @@ import retrofit2.http.Query;
 
 public interface categoriesQuery {
     @GET("categories")
-    Call<categoriesModal> getCategories (@Query("api_key") String api_key);
+    Call<categoriesModal> getCategories (@Query("apiKey") String apiKey);
 }

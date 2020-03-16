@@ -7,5 +7,5 @@ import retrofit2.http.Query;
 
 public interface citiesQuery {
     @GET("cities")
-    Call<citiesModal> getCities (@Query("api_key") String api_key);
+    Call<citiesModal> getCities (@Query("apiKey") String apiKey);
 }
